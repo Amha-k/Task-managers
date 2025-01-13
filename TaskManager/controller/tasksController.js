@@ -15,10 +15,11 @@ if(!req?.body?.name) return res.status(400).json({'message':'enter task'})
         const result= await task.create({
            name: req.body.name,
         })
-        res.status(200).json({result})
+        res.status(200).json({result});
         
     } catch (error) {
-        console.log(error)
+        res.status(400).json({'message':error.message})
+        console.log(error);
     }
 }
 
@@ -32,7 +33,7 @@ const getSingleTasks=async (req,res)=>{
    
      if(!tasks) return res.status(400).json({'message':`no task by this id ${req.params}`})
    
-       res.json({tasks})
+       res.json({tasks});
 
 }
 

@@ -8,7 +8,7 @@ const notFound = require('./middleware/notfoundapi');
 
 connectDB();
 
-const port= process.env.PORT || 3000
+const port= process.env.PORT || 4000
 
 app.use(express.static('./public'))
 app.use(express.json())
@@ -17,10 +17,10 @@ app.use(express.json())
 app.use('/api/v1/tasks',tasks)
 app.use(notFound)
 mongoose.connection.once("open",()=>{
-    console.log('mongoDB connected sucessfully')
+    console.log('mongoDB connected successfully')
 })
 
 
 app.listen(port,()=>{
-    console.log(`server is listening prot number ${port}`)
+    console.log(`server is listening port ${port}`)
 })

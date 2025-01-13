@@ -5,7 +5,8 @@ try {
     await mongoose.connect('mongodb://localhost:27017/store')
   
 } catch (error) {
-    console.log(error)
+    
+    console.log(error);
 
 }
 }
